@@ -39,4 +39,4 @@ The goal of this project is essentially creating an app that I want to use mysel
 
 # Wireframes, sketches, or screen designs
 
-Coming soon on Sep 23.
+View on this [Figma File](https://www.figma.com/file/o1GhTTO36qFSxos4Q2S40x/PlanningApp?node-id=0%3A1)
