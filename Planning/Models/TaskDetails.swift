@@ -10,7 +10,6 @@ import Foundation
 struct TaskDetails: Codable {
     var taskName: String
     var time: String
-    var category: String
     
     static var TaskData: TaskDetails? {
         TaskDetails.fromJSON(named: "TaskData")
