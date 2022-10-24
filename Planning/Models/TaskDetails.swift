@@ -22,7 +22,7 @@ struct TaskDetails: Codable {
                 let TaskData = try decoder.decode(TaskDetails.self, from: data)
                 return TaskData
             } catch {
-                print("Could not make person from data.", error.localizedDescription)
+                print("Could not make TaskData from data.", error.localizedDescription)
             }
         }
         return nil

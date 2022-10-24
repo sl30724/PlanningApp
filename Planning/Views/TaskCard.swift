@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct TaskCard: View {
+
     var body: some View {
+        
         HStack(alignment: .top, spacing: 20) {
             Circle()
                 .stroke()
