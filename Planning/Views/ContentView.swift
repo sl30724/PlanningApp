@@ -95,8 +95,15 @@ struct TestSheet: View {
     @State private var taskEndTime = Date()
     @State var taskName: String = ""
     @State private var allDay = false
+    let items: [String] = [
+    "Task",
+    "Selfcare"
+    ]
+    @State private var selectedItem: String = "Task"
+    let taskCategories = ["Purple", "Pink", "Green", "Blue"]
     @State private var category = "Purple"
-    let Categories = ["Purple", "Pink", "Green", "Blue"]
+    let selfCareEmojis = ["🥰", "😴", "🧋"]
+    @State private var emoji = ""
     var body : some View {
         VStack{
             HStack{
@@ -106,16 +113,23 @@ struct TestSheet: View {
                 .foregroundColor(.red)
                 .frame(alignment: .leading)
                 Spacer()
-                Text("Add a task")
-                    .font(.headline)
-                    .frame(alignment: .center)
-                Spacer()
+                //                Text("Add a task")
+                //                    .font(.headline)
+                //                    .frame(alignment: .center)
+                //                Spacer()
                 Button("Add"){
                 }
                 .frame(alignment: .trailing)
             }
             .padding(.top)
-            TextField("Task Name", text: $taskName)
+            Picker("Choose item to add", selection: $selectedItem){
+                ForEach(items, id: \.self){ item in
+                    Text(item)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding(.top)
+            TextField("\(selectedItem) Name", text: $taskName)
                 .textFieldStyle(.plain)
                 .padding(.top)
                 .disableAutocorrection(true)
@@ -145,19 +159,43 @@ struct TestSheet: View {
             .padding(.top)
             
             HStack(){
+                if (selectedItem == "Task") {
                 Text("Category")
                 Picker("Category", selection: $category){
-                    ForEach(Categories, id :\.self){ i in HStack {
+                    ForEach(taskCategories, id :\.self){ i in HStack {
                         Image(systemName: "circle.fill")
                         Text(i)
-                    }.tag(i)
+                    }
+                    .tag(i)
                     }
                 }
                 .pickerStyle(.menu)
                 .labelsHidden()
-            }
+                } else {
+                    Text("Emoji")
+                    Picker("Emoji", selection: $emoji){
+                        ForEach(selfCareEmojis, id :\.self){ i in HStack {
+                            Text(i)
+                        }.tag(i)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                }
+        }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top)
         }
+    }
+}
+
+struct Tab1: View {
+    var body: some View{
+        Text("Tab1")
+    }
+}
+struct Tab2: View {
+    var body: some View{
+        Text("Tab2")
     }
 }
