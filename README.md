@@ -51,8 +51,8 @@ View on this [Figma File](https://www.figma.com/file/o1GhTTO36qFSxos4Q2S40x/Plan
 - [x] Create TaskCard
 - [x] [Create bottom menu, navigation between views, and add task/selfcare popup sheet](https://github.com/sl30724/PlanningApp/tree/1026)
 - [ ] Fix dropdown menu in task/selfcare popup sheet
-#### November
 - [ ] Create customized calendar in TaskView
+#### November
 - [ ] Present and store user input data in TaskCard & TaskView
 - [ ] Create a checkbox for marking completion on TaskCard, edit function in TaskCard, and editing popup sheet.
 - [ ] Create customized message on TaskView
