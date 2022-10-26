@@ -44,10 +44,6 @@ The goal of this project is essentially creating an app that I want to use mysel
 - Notifications
 
 
-# APIs needed
-
-- Notifications
-
 # Wireframes, sketches, or screen designs
 
 View on this [Figma File](https://www.figma.com/file/o1GhTTO36qFSxos4Q2S40x/PlanningApp?node-id=0%3A1)
