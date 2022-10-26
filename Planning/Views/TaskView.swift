@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct TaskList: View {
+struct TaskView: View {
     var body: some View {
-        Text("Task List")
+            Text("Task List")
     }
 }
 
-struct TaskList_Previews: PreviewProvider {
+struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskList()
+        TaskView()
     }
 }

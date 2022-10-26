@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var router = ViewRouter()
     var body: some View {
         VStack{
             Spacer()
             
-            Text("Hello, world!")
-                .padding()
+            router.view
             
             Spacer()
             
             HStack{
-                TabIcon(imageName: "calendar", tabTitle: "Tasks")
+                TabIcon(viewModel: .Tasks, router: router)
                 CenterTabIcon()
-                TabIcon(imageName: "checkmark.bubble", tabTitle: "CheckIn")
+                TabIcon(viewModel: .CheckIn, router: router)
             }
             .frame(height: UIScreen.main.bounds.height/10)
             .frame(maxWidth: .infinity)
@@ -31,7 +31,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(router: ViewRouter())
     }
 }
 
@@ -67,19 +67,19 @@ struct CenterTabIcon: View {
 }
 
 struct TabIcon: View {
-    let imageName: String
-    let tabTitle: String
+    let viewModel: TabBarViewModel
+    @ObservedObject var router: ViewRouter
     var body: some View {
         Spacer()
         Button {
-            print("Change view")
+            router.currentView = viewModel
         } label: {
             VStack(spacing: 5){
-                Image(systemName: imageName)
+                Image(systemName: viewModel.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 20, height: 20)
-                Text(tabTitle)
+                Text("\(viewModel.tabTitle)")
                     .font(.callout)
             }
         }

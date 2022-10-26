@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct CheckIn: View {
+struct CheckInView: View {
     var body: some View {
         Text("CheckIn")
     }
 }
 
-struct CheckIn_Previews: PreviewProvider {
+struct CheckInView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckIn()
+        CheckInView()
     }
 }
