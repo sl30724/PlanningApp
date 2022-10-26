@@ -48,4 +48,4 @@ The goal of this project is essentially creating an app that I want to use mysel
 View on this [Figma File](https://www.figma.com/file/o1GhTTO36qFSxos4Q2S40x/PlanningApp?node-id=0%3A1)
 
 # Progress
--[ ]1026
+-[ ] 1026
