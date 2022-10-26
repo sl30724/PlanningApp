@@ -48,6 +48,8 @@ The goal of this project is essentially creating an app that I want to use mysel
 View on this [Figma File](https://www.figma.com/file/o1GhTTO36qFSxos4Q2S40x/PlanningApp?node-id=0%3A1)
 
 # Progress
+I'm excited that I've been able to make my code reusable, and I'm able to overcome issues I run into by researching it online. I've been intimidated by storing and passing data, so I've worked on views so far to get myself familiar with Switch.
+
 - [x] Create TaskCard
 - [x] [Create bottom menu, navigation between views, and add task/selfcare popup sheet](https://github.com/sl30724/PlanningApp/tree/1026)
 - [ ] Fix dropdown menu in task/selfcare popup sheet
