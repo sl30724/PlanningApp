@@ -59,5 +59,5 @@ View on this [Figma File](https://www.figma.com/file/o1GhTTO36qFSxos4Q2S40x/Plan
 - [ ] Design CheckInView
 #### December
 - [ ] Create CheckInView
-... More to add after designing the CheckInView
+- [ ] ... More to add after designing the CheckInView
 - [ ] Notification API
