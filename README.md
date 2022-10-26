@@ -35,15 +35,17 @@ The goal of this project is essentially creating an app that I want to use mysel
 - *Ability to share your daily plan with friends and family, so they can be a source of support too.*
 - *Suggestions of sharing your daily plan with friends and family at the start of overly scheduled day.*
 
-# List of screens & screen map
-
-[See this Figma file](https://www.figma.com/file/o1GhTTO36qFSxos4Q2S40x/PlanningApp?node-id=9%3A3)
-
 # APIs needed
 
 - Notifications
 
+# List of screens & screen map
+
+[See this Figma file](https://www.figma.com/file/o1GhTTO36qFSxos4Q2S40x/PlanningApp?node-id=9%3A3)
 
 # Wireframes, sketches, or screen designs
 
 View on this [Figma File](https://www.figma.com/file/o1GhTTO36qFSxos4Q2S40x/PlanningApp?node-id=0%3A1)
+
+# Progress
+-[ ]1026
