@@ -56,7 +56,7 @@ struct CenterTabIcon: View {
         }
         .offset(y: -40)
         .sheet(isPresented: $SheetShow) {
-            TestSheet()
+            AddPopUp()
                 .presentationDetents([.fraction(0.45)])
                 .presentationDragIndicator(.visible)
                 .padding(20)
@@ -68,7 +68,7 @@ struct CenterTabIcon: View {
 
 struct TabIcon: View {
     let viewModel: TabBarViewModel
-    @ObservedObject var router: ViewRouter
+    @ObservedObject var router = ViewRouter()
     var body: some View {
         Spacer()
         Button {
@@ -84,118 +84,5 @@ struct TabIcon: View {
             }
         }
         Spacer()
-    }
-}
-
-
-struct TestSheet: View {
-    @Environment(\.dismiss) var dismiss
-    @State private var taskDate = Date()
-    @State private var taskStartTime = Date()
-    @State private var taskEndTime = Date()
-    @State var taskName: String = ""
-    @State private var allDay = false
-    let items: [String] = [
-    "Task",
-    "Selfcare"
-    ]
-    @State private var selectedItem: String = "Task"
-    let taskCategories = ["Purple", "Pink", "Green", "Blue"]
-    @State private var category = "Purple"
-    let selfCareEmojis = ["🥰", "😴", "🧋"]
-    @State private var emoji = ""
-    var body : some View {
-        VStack{
-            HStack{
-                Button("Cancel", role: .cancel){
-                    dismiss()
-                }
-                .foregroundColor(.red)
-                .frame(alignment: .leading)
-                Spacer()
-                //                Text("Add a task")
-                //                    .font(.headline)
-                //                    .frame(alignment: .center)
-                //                Spacer()
-                Button("Add"){
-                }
-                .frame(alignment: .trailing)
-            }
-            .padding(.top)
-            Picker("Choose item to add", selection: $selectedItem){
-                ForEach(items, id: \.self){ item in
-                    Text(item)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding(.top)
-            TextField("\(selectedItem) Name", text: $taskName)
-                .textFieldStyle(.plain)
-                .padding(.top)
-                .disableAutocorrection(true)
-                .font(.title2)
-                .cornerRadius(5)
-            HStack {
-                DatePicker("Date", selection: $taskDate, in: ...Date(), displayedComponents: .date)
-                Toggle(isOn: $allDay){
-                    Text("All-day")
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                }
-            }
-            .padding(.top)
-            HStack {
-                HStack(spacing: 6){
-                    Text("Start Time")
-                    DatePicker("Start time", selection: $taskStartTime, in: ...Date(), displayedComponents: .hourAndMinute)
-                        .labelsHidden()
-                }
-                Spacer()
-                HStack(spacing: 6){
-                    Text("End Time")
-                    DatePicker("End time", selection: $taskEndTime, in: ...Date(), displayedComponents: .hourAndMinute)
-                        .labelsHidden()
-                }
-            }
-            .padding(.top)
-            
-            HStack(){
-                if (selectedItem == "Task") {
-                Text("Category")
-                Picker("Category", selection: $category){
-                    ForEach(taskCategories, id :\.self){ i in HStack {
-                        Image(systemName: "circle.fill")
-                        Text(i)
-                    }
-                    .tag(i)
-                    }
-                }
-                .pickerStyle(.menu)
-                .labelsHidden()
-                } else {
-                    Text("Emoji")
-                    Picker("Emoji", selection: $emoji){
-                        ForEach(selfCareEmojis, id :\.self){ i in HStack {
-                            Text(i)
-                        }.tag(i)
-                        }
-                    }
-                    .pickerStyle(.menu)
-                    .labelsHidden()
-                }
-        }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.top)
-        }
-    }
-}
-
-struct Tab1: View {
-    var body: some View{
-        Text("Tab1")
-    }
-}
-struct Tab2: View {
-    var body: some View{
-        Text("Tab2")
     }
 }
